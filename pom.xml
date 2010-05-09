@@ -1,13 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>pl.radical.mojos</groupId>
+
+	<parent>
+		<groupId>pl.radical.mojos</groupId>
+		<artifactId>maven-plugins</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<version>0.0.1-SNAPSHOT</version>
+
 	<artifactId>maven-javascript-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>maven-javascript-plugin</name>
-	<description>Maven 2 plugin that have the same functionality as Ant FixCRLF task.</description>
+	<description>Maven2 project that handles JavaScript files in various ways:
+* validating and reporting issues in JS syntax via JSLint 
+* JSDoc creation
+* minifying and obfuscation via popular mechanisms</description>
 	<url>http://projekty.radical.com.pl/projects/javascript-plugin</url>
+
 	<issueManagement>
 		<system>Redmine</system>
 		<url>http://projekty.radical.com.pl/projects/javascript-plugin/issues</url>
@@ -16,76 +27,8 @@
 		<system>Hudson</system>
 		<url>http://dev.radical.com.pl/hudson/job/maven-javascript-plugin/</url>
 	</ciManagement>
+
 	<inceptionYear>2010</inceptionYear>
-	<developers>
-		<developer>
-			<id>uded</id>
-			<name>Łukasz Rżanek</name>
-			<email>lukasz.rzanek@radical.com.pl</email>
-			<organization>Radical Creations</organization>
-			<timezone>CET</timezone>
-			<roles>
-				<role>Lead developer</role>
-			</roles>
-		</developer>
-	</developers>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
-	<licenses>
-		<license>
-			<name>LGPLv3</name>
-			<url>http://www.gnu.org/licenses/lgpl-3.0-standalone.html</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
-	<distributionManagement>
-		<repository>
-			<id>radical-releases</id>
-			<url>http://dev.radical.com.pl/maven/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>radical-snapshots</id>
-			<url>http://dev.radical.com.pl/maven/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>radical-releases</id>
-			<url>http://dev.radical.com.pl/maven/content/repositories/releases</url>
-		</repository>
-		<repository>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<id>radical-snapshots</id>
-			<url>http://dev.radical.com.pl/maven/content/repositories/snapshots</url>
-		</repository>
-		<repository>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>radical-public</id>
-			<url>http://dev.radical.com.pl/maven/content/groups/public/</url>
-		</repository>
-		<repository>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<id>radical-public-snapshots</id>
-			<url>http://dev.radical.com.pl/maven/content/groups/public-snapshots/</url>
-		</repository>
-	</repositories>
 
 	<scm>
 		<connection>http://github.com/uded/maven-javascript-plugin</connection>
@@ -93,21 +36,6 @@
 		<tag>HEAD</tag>
 		<url>http://projekty.radical.com.pl/projects/javascript-plugin/repository</url>
 	</scm>
-	<organization>
-		<name>Radical Creations</name>
-	</organization>
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 	<dependencies>
 		<dependency>
