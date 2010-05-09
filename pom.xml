@@ -29,8 +29,8 @@
 		<url>http://dev.radical.com.pl/hudson/job/maven-javascript-plugin/</url>
 	</ciManagement>
 	<scm>
-		<connection>http://github.com/uded/maven-javascript-plugin</connection>
-		<developerConnection>https://svn.radical.com.pl/maven2/maven-javascript-plugin/</developerConnection>
+		<connection>scm:git:http://github.com/uded/maven-javascript-plugin.git</connection>
+		<developerConnection>scm:svn:https://svn.radical.com.pl/maven2/maven-javascript-plugin/</developerConnection>
 		<tag>HEAD</tag>
 		<url>http://projekty.radical.com.pl/projects/javascript-plugin/repository</url>
 	</scm>
