@@ -18,7 +18,7 @@
 * JSDoc creation
 * minifying and obfuscation via popular mechanisms</description>
 	<url>http://projekty.radical.com.pl/projects/javascript-plugin</url>
-    <inceptionYear>2010</inceptionYear>
+	<inceptionYear>2010</inceptionYear>
 
 	<issueManagement>
 		<system>Redmine</system>
@@ -34,6 +34,23 @@
 		<tag>HEAD</tag>
 		<url>http://projekty.radical.com.pl/projects/javascript-plugin/repository</url>
 	</scm>
+
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>radical-public-releases</id>
+			<url>http://maven.radical.com.pl/releases/</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<id>radical-public-snapshots</id>
+			<url>http://maven.radical.com.pl/snapshots/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
