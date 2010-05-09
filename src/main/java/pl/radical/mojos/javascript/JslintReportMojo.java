@@ -1,5 +1,6 @@
 package pl.radical.mojos.javascript;
 
+import java.io.File;
 import java.util.Locale;
 
 import org.apache.maven.doxia.siterenderer.Renderer;
@@ -7,40 +8,69 @@ import org.apache.maven.project.MavenProject;
 import org.apache.maven.reporting.AbstractMavenReport;
 import org.apache.maven.reporting.MavenReportException;
 
+/**
+ * @author <a href="mailto:lukasz@radical.com.pl">Łukasz Rżanek</a>
+ * @author Radical Creations &copy;2010
+ * @goal report
+ * @execute phase="process-resources"
+ */
 public class JslintReportMojo extends AbstractMavenReport {
+	/**
+	 * Location where generated html will be created.
+	 * 
+	 * @parameter expression="${project.reporting.outputDirectory}"
+	 */
+	private File outputDirectory;
+
+	/**
+	 * The filename to use for the report.
+	 * 
+	 * @parameter expression="${outputName}" default-value="jslint-report"
+	 * @required
+	 */
+	private String outputName;
+
+	/**
+	 * Doxia Site Renderer
+	 * 
+	 * @component
+	 */
+	private Renderer siteRenderer;
+
+	/**
+	 * Maven Project
+	 * 
+	 * @parameter expression="${project}"
+	 * @required @readonly
+	 */
+	private MavenProject project;
 
 	protected void executeReport(final Locale locale) throws MavenReportException {
-		// TODO Auto-generated method stub
-	}
 
-	protected String getOutputDirectory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	protected MavenProject getProject() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	protected Renderer getSiteRenderer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getDescription(final Locale locale) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public String getName(final Locale locale) {
-		// TODO Auto-generated method stub
-		return null;
+		return "jslint report";
+	}
+
+	public String getDescription(final Locale locale) {
+		return "Report on JavaScript syntax errors and warnings";
 	}
 
 	public String getOutputName() {
-		// TODO Auto-generated method stub
-		return null;
+		return outputName;
+	}
+
+	protected String getOutputDirectory() {
+		return outputDirectory.getAbsolutePath();
+	}
+
+	protected MavenProject getProject() {
+		return project;
+	}
+
+	protected Renderer getSiteRenderer() {
+		return siteRenderer;
 	}
 
 }
