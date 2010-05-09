@@ -18,6 +18,7 @@
 * JSDoc creation
 * minifying and obfuscation via popular mechanisms</description>
 	<url>http://projekty.radical.com.pl/projects/javascript-plugin</url>
+    <inceptionYear>2010</inceptionYear>
 
 	<issueManagement>
 		<system>Redmine</system>
@@ -27,9 +28,6 @@
 		<system>Hudson</system>
 		<url>http://dev.radical.com.pl/hudson/job/maven-javascript-plugin/</url>
 	</ciManagement>
-
-	<inceptionYear>2010</inceptionYear>
-
 	<scm>
 		<connection>http://github.com/uded/maven-javascript-plugin</connection>
 		<developerConnection>https://svn.radical.com.pl/maven2/maven-javascript-plugin/</developerConnection>
