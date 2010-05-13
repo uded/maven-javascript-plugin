@@ -38,14 +38,23 @@ public class JslintReportMojo extends AbstractMavenReport {
 	private Renderer siteRenderer;
 
 	/**
+	 * Location of the source files.
+	 * 
+	 * @parameter default-value="${basedir}/src/main/javascript"
+	 */
+	private File sourceDirectory;
+
+	/**
 	 * Maven Project
 	 * 
 	 * @parameter expression="${project}"
-	 * @required @readonly
+	 * @required
+	 * @readonly
 	 */
 	private MavenProject project;
 
-	protected void executeReport(final Locale locale) throws MavenReportException {
+	protected void executeReport(final Locale locale)
+			throws MavenReportException {
 
 	}
 
